@@ -292,7 +292,7 @@ int main(void)
 	unsigned char __zero_bin[] = {};
 	unsigned int __zero_bin_len = 0;
 	
-	for(;;){
+	//for(;;){
 	#include "after_control/15327.bin.c"
 	libusb_bulk_transfer(fl2000_handle, 0x01, __15327_bin, __15327_bin_len, &bytes_back, 5000);
 	fprintf(stderr, "%d bytes from bulk\n", bytes_back);
@@ -384,6 +384,37 @@ int main(void)
 	
 	#include "after_control/15369.bin.c"
 	libusb_bulk_transfer(fl2000_handle, 0x01, __15369_bin, __15369_bin_len, &bytes_back, 5000);
+	fprintf(stderr, "%d bytes from bulk\n", bytes_back);
+	
+	libusb_bulk_transfer(fl2000_handle, 0x01, __zero_bin, __zero_bin_len, &bytes_back, 5000);
+	fprintf(stderr, "%d bytes from bulk\n", bytes_back);
+	
+	
+	for(;;){
+	//Here comes BIGGER packets
+	
+	#include "800x600/15375.bin.c"
+	libusb_bulk_transfer(fl2000_handle, 0x01, __15375_bin, __15375_bin_len, &bytes_back, 5000);
+	fprintf(stderr, "%d bytes from bulk\n", bytes_back);
+	
+	#include "800x600/15376.bin.c"
+	libusb_bulk_transfer(fl2000_handle, 0x01, __15376_bin, __15376_bin_len, &bytes_back, 5000);
+	fprintf(stderr, "%d bytes from bulk\n", bytes_back);
+	
+	#include "800x600/15377.bin.c"
+	libusb_bulk_transfer(fl2000_handle, 0x01, __15377_bin, __15377_bin_len, &bytes_back, 5000);
+	fprintf(stderr, "%d bytes from bulk\n", bytes_back);
+	
+	#include "800x600/15378.bin.c"
+	libusb_bulk_transfer(fl2000_handle, 0x01, __15378_bin, __15378_bin_len, &bytes_back, 5000);
+	fprintf(stderr, "%d bytes from bulk\n", bytes_back);
+	
+	#include "800x600/15379.bin.c"
+	libusb_bulk_transfer(fl2000_handle, 0x01, __15379_bin, __15379_bin_len, &bytes_back, 5000);
+	fprintf(stderr, "%d bytes from bulk\n", bytes_back);
+	
+	#include "800x600/15380.bin.c"
+	libusb_bulk_transfer(fl2000_handle, 0x01, __15380_bin, __15380_bin_len, &bytes_back, 5000);
 	fprintf(stderr, "%d bytes from bulk\n", bytes_back);
 	
 	libusb_bulk_transfer(fl2000_handle, 0x01, __zero_bin, __zero_bin_len, &bytes_back, 5000);
